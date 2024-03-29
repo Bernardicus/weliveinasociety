@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Nightly Monthly</title>
+    <style>
+          /* Style for tabs */
+        .tab {
+            display: none;
+        }
+
+        /* Style for active tab */
+        .tab.active {
+            display: block;
+        }
+
+        /* Style for tab buttons */
+        .tab-button {
+            cursor: pointer;
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-size: 25px; 
+            margin-right: 20px;
+        }
+
+        /* Style for active tab button */
+        .tab-button.active {
+            color: #ecfd5f;
+            font-weight: bold;
+        }
+
+        body, html {
+            font-family: 'Nunito Black', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://i.imgur.com/r4a54tS.png');
+            background-size: cover;
+            background-repeat: repeat; 
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            
+        }
+        header {
+            background-color: #001804;
+            color: #fff;
+            position: fixed;
+            padding: 10px;
+            width: 100%;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 5px;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 30px;
+        }
+        article {
+            text-align: center;
+            border-bottom: 2px solid #edfd5f70;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: #ffffff;
+        }
+        h3 {
+            color: #ffffff;
+        }
+        h4 {
+            color: #ffffff;
+            text-align: center;
+            font-size: 40px; 
+            margin-top: 0px;
+            margin-bottom: 20px;
+        }
+        h5 {
+            color: #555;
+            text-align: center;
+            font-size: 40px;
+            margin-top: 10px;
+            margin-bottom: 0px;
+        }
+        footer {
+            background-color: #0000006b;
+            color: #ffffff;
+            padding: 5px;
+            text-align: center;
+            width: 100%;
+            /* position: fixed; */
+            bottom: 0;
+        }
+
+        .center-container {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .panel {
+            width: 70%; /* Change this value to set the width */
+            /* max-width: 800px; Optional: Set a maximum width */
+            height: 100vh;
+            background-color: #012707; /* Change the color and opacity as needed */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    
+        .panel-content {
+            text-align: center;
+            color: white;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <div class="tab-buttons">
+                    <span class="tab-button" >Home</span>
+                    <span class="tab-button" onclick="redirectToPage('page1.html')">News</span>
+                    <span class="tab-button" onclick="redirectToPage('page2.html')">Reviews</span>
+                  </div>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <div class="center-container">
+        <div class="panel">
+            <div class="panel-content">
+                <div class="tab" id="Home">
+                    <main>
+                        <section class="featured-article">
+                            <h2>Featured Article</h2>
+                            <article>
+                                <h3>PENIS</h3>
+                                <p>Article content goes here...</p> 
+                                <a href="#">Read more</a>
+                            </article>
+                        </section>
+                        
+                        <section class="latest-news">
+                            <h2>Latest News</h2>
+                            <article>
+                                <h3>Article Title</h3>
+                                <p>Article content goes here...</p>
+                                <a href="#">Read more</a>
+                            </article>
+                            <article>
+                              <h3>Article Title</h3>
+                              <p>Article content goes here...</p>
+                              <a href="#">Read more</a>
+                            </article>
+                            <!-- More articles can go here -->
+                        </section>
+                    </main>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <footer>
+        <p>&copy; 2024 Certified Yappers. All rights reserved.</p>
+    </footer> -->
+
+<script>
+
+function redirectToPage(pageUrl) {
+    window.location.href = pageUrl;
+}
+
+function openTab(evt, tabName) {
+    // Hide all tabs
+    var i, tabcontent, tabbuttons;
+    tabcontent = document.getElementsByClassName("tab");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    
+    // Remove 'active' class from all tab buttons
+    tabbuttons = document.getElementsByClassName("tab-button");
+    for (i = 0; i < tabbuttons.length; i++) {
+        tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
+    }
+    
+    // Show the selected tab and set the button as active
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+    }
+    document.getElementById("defaultOpen").click();
+</script>
+</body>
+</html>
