@@ -49,11 +49,6 @@
             padding: 10px;
             width: 100%;
         }
-        headerTwo {
-            background-color: #000441;
-            color: #ff2b2b;
-            padding: 0px;
-        }
         img {
             width: 100%;
             height: auto;
@@ -122,15 +117,16 @@
             align-items: center;
         }
         .panel {
-            width: 70%; /* Change this value to set the width */
-            /* max-width: 800px; Optional: Set a maximum width */
+            width: 70%; 
+            /* max-width: 800px; */
             height: 100vh;
-            background-color: #001804; /* Change the color and opacity as needed */
+            background-color: #012707; 
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
         }
+    
         .panel-content {
             text-align: center;
             color: white;
@@ -139,19 +135,19 @@
     </style>
 </head>
 <body>
+
     <header>
-        <!-- <h5>We Dont Talk About The</h5>
-        <h4>Incident</h4> -->
         <nav>
             <ul>
                 <div class="tab-buttons">
                     <span class="tab-button" onclick="redirectToPage('index.html')">Home</span>
                     <span class="tab-button" onclick="redirectToPage('page1.html')">News</span>
                     <span class="tab-button" >Reviews</span>
-                  </div>
+                </div>
             </ul>
         </nav>
     </header>
+    
 
     <div class="center-container">
         <div class="panel">
@@ -161,7 +157,7 @@
                         <section class="featured-article">
                             <h2>Featured Article</h2>
                             <article>
-                                <h3>VAGINA</h3>
+                                <h3>PENIS</h3>
                                 <p>Article content goes here...</p> 
                                 <a href="#">Read more</a>
                             </article>
@@ -186,25 +182,17 @@
             </div>
         </div>
     </div>
-    
-
-    
-      
-    <div class="tab" id="News">
-        <h3>Tab 2 Content</h3>
-        <p>This is the content of tab 2.</p>
-    </div>
-    
-    <div class="tab" id="Reviews">
-        <h3>Tab 3 Content</h3>
-        <p>This is the content of tab 3.</p>
-    </div>
 
     <!-- <footer>
         <p>&copy; 2024 Certified Yappers. All rights reserved.</p>
     </footer> -->
 
 <script>
+
+function redirectToPage(pageUrl) {
+    window.location.href = pageUrl;
+}
+
 function openTab(evt, tabName) {
     // Hide all tabs
     var i, tabcontent, tabbuttons;
