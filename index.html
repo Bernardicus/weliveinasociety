@@ -208,35 +208,40 @@
             justify-content: center; /* Center the content horizontally */
             align-items: center; /* Center the content vertically */
         }
+
         .top-image {
-            position: absolute;
-            width: 600px; /* Set the width */
-            height: auto; /* Maintain aspect ratio */
-            bottom: 150px;
-            right: 0px;
-            z-index: 999; /* Ensure it's on top of everything */
-        }  
-        .top-image2 {
-            position: absolute;
-            width: 900px; /* Set the width */
-            height: auto; /* Maintain aspect ratio */
-            bottom: 0px;
-            left: -100px;
-            z-index: 999; /* Ensure it's on top of everything */
-        }   
-        .top-image3 {
-            position: absolute;
-            width: 400px; /* Set the width */
-            height: auto; /* Maintain aspect ratio */
-            top: 10px;
-            left: 150px;
-            z-index: 999; /* Ensure it's on top of everything */
-        }   
+    position: absolute;
+    width: 25%; /* Set the width as a percentage of the viewport width */
+    height: auto; /* Maintain aspect ratio */
+    bottom: 10%; /* Set the distance from the bottom as a percentage of the viewport height */
+    right: 0; /* Align to the right */
+    z-index: 999; /* Ensure it's on top of everything */
+}
+
+.top-image2 {
+    position: absolute;
+    width: 40%; /* Set the width as a percentage of the viewport width */
+    height: auto; /* Maintain aspect ratio */
+    bottom: 0; /* Align to the bottom */
+    left: 0; /* Align to the left */
+    z-index: 999; /* Ensure it's on top of everything */
+}
+
+.top-image3 {
+    position: absolute;
+    width: 20%; /* Set the width as a percentage of the viewport width */
+    height: auto; /* Maintain aspect ratio */
+    top: 1%; /* Set the distance from the top as a percentage of the viewport height */
+    left: 5%; /* Set the distance from the left as a percentage of the viewport width */
+    z-index: 999; /* Ensure it's on top of everything */
+}
         .paper {
-            position: absolute;
-            width: 600px; /* Set the width of the container */
-            height: 600px; /* Set the height of the container */
-        }
+    position: absolute;
+    width: 40%; /* Set the width as a percentage of the viewport width */
+    height: auto; /* Maintain aspect ratio */
+    top: 20%; /* Set the distance from the top as a percentage of the viewport height */
+    left: 30%; /* Set the distance from the left as a percentage of the viewport width */
+}
         .paper img {
             margin: 0 auto; /* Center the image horizontally */
             max-width: 100%; /* Make the image width responsive */
@@ -268,9 +273,9 @@
 
     <img src="https://i.imgur.com/Mwac2eC.png" alt="Your Image" class="top-image">
 
-    <img src="https://i.imgur.com/bPlePhJ.png" alt="Your Image" class="top-image2">
+    <img src="https://i.imgur.com/juNUfMr.png" alt="Your Image" class="top-image2">
 
-    <img src="https://i.imgur.com/fh4Chuh.png" alt="Your Image" class="top-image3">
+    <!-- <img src="https://i.imgur.com/fh4Chuh.png" alt="Your Image" class="top-image3"> -->
 
 
     
