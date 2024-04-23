@@ -3,8 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Nightly Monthly</title>
+    <title>THE FUCKING NEWS</title>
     <style>
+
+        @font-face {
+            font-family: 'Nunito Black';
+            src: url('C:/Users/bckub/Documents/Laptop/NEW PC/SAVE THIS STUFF/Website/Nunito-Black.ttf') format('tff');
+        }
+
+        /* Container needed to position the overlay. Adjust the width as needed */
+        .container {
+        position: relative;
+        width: 50%;
+        max-width: 300px;
+        }
+
+        /* Make the image to responsive */
+        .image {
+        display: block;
+        width: 100%;
+        height: auto;
+        }
+
+        /* The overlay effect - lays on top of the container and over the image */
+        .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgb(0, 0, 0);
+        background: rgba(0, 0, 0, 0.5); /* Black see-through */
+        color: #f1f1f1;
+        width: 100%;
+        transition: .5s ease;
+        opacity:0;
+        color: white;
+        font-size: 20px;
+        padding: 20px;
+        text-align: center;
+        }
+
+        /* When you mouse over the container, fade in the overlay title */
+        .container:hover .overlay {
+        opacity: 1;
+        }
           /* Style for tabs */
         .tab {
             display: none;
@@ -20,21 +63,32 @@
             cursor: pointer;
             text-decoration: none;
             color: rgb(255, 255, 255);
-            font-size: 25px; 
-            margin-right: 20px;
+            font-size: 15px; 
+            margin-right: 30px;
+            text-shadow: -2px -2px 0 #ff2365,  
+                 2px -2px 0 #ff2365,  
+                -2px 2px 0 #ff2365,  
+                 2px 2px 0 #ff2365;
         }
 
         /* Style for active tab button */
         .tab-button.active {
-            color: #ecfd5f;
-            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-size: 15px; 
+            margin-right: 30px;
+            text-shadow: -2px -2px 0 #ff2365,  
+                 2px -2px 0 #ff2365,  
+                -2px 2px 0 #ff2365,  
+                 2px 2px 0 #ff2365;
         }
 
         body, html {
             font-family: 'Nunito Black', sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('https://i.imgur.com/r4a54tS.png');
+            /* background-image: url('https://i.imgur.com/4efJv9h.png'); */
             background-size: cover;
             background-repeat: repeat; 
             display: flex;
@@ -43,7 +97,7 @@
             
         }
         header {
-            background-color: #001804;
+            background-color: #0000004b;
             color: #fff;
             position: fixed;
             padding: 10px;
@@ -75,7 +129,7 @@
         }
         article {
             text-align: center;
-            border-bottom: 2px solid #edfd5f70;
+            border-bottom: 2px solid #00000000;
             padding-bottom: 20px;
             margin-bottom: 20px;
         }
@@ -101,13 +155,26 @@
             margin-bottom: 0px;
         }
         footer {
-            background-color: #0000006b;
+            background-color: #ff45b0;
             color: #ffffff;
             padding: 5px;
             text-align: center;
             width: 100%;
-            /* position: fixed; */
+            height: 30px;
+            position: fixed;
             bottom: 0;
+            z-index: 9999;
+        }
+        footerTwo {
+            background-color: #ff80ca;
+            color: #ffffff;
+            padding: 5px;
+            text-align: center;
+            width: 100%;
+            height: 100px;
+            position: fixed;
+            bottom: 40px;
+            z-index: 9999;
         }
 
         .center-container {
@@ -117,26 +184,70 @@
             align-items: center;
         }
         .panel {
+            padding-top: 40px; 
             width: 70%; 
             /* max-width: 800px; */
             height: 100vh;
-            background-color: #012707; 
-            display: flex;
+            background-color: #ff3fad; 
+            display: fixed;
             justify-content: center;
             align-items: center;
             flex-direction: column;
         }
     
         .panel-content {
+            padding-top: 40px; 
             text-align: center;
             color: white;
+        }
+
+        .paper-container {
+            position: relative;
+            height: 85vh; /* Set the height of the container to cover the viewport */
+            display: flex;
+            justify-content: center; /* Center the content horizontally */
+            align-items: center; /* Center the content vertically */
+        }
+        .top-image {
+            position: absolute;
+            width: 600px; /* Set the width */
+            height: auto; /* Maintain aspect ratio */
+            bottom: 150px;
+            right: 0px;
+            z-index: 999; /* Ensure it's on top of everything */
+        }  
+        .top-image2 {
+            position: absolute;
+            width: 900px; /* Set the width */
+            height: auto; /* Maintain aspect ratio */
+            bottom: 0px;
+            left: -100px;
+            z-index: 999; /* Ensure it's on top of everything */
+        }   
+        .top-image3 {
+            position: absolute;
+            width: 400px; /* Set the width */
+            height: auto; /* Maintain aspect ratio */
+            top: 10px;
+            left: 150px;
+            z-index: 999; /* Ensure it's on top of everything */
+        }   
+        .paper {
+            position: absolute;
+            width: 600px; /* Set the width of the container */
+            height: 600px; /* Set the height of the container */
+        }
+        .paper img {
+            margin: 0 auto; /* Center the image horizontally */
+            max-width: 100%; /* Make the image width responsive */
+            max-height: 100%; /* Make the image height responsive */
         }
         
     </style>
 </head>
 <body>
 
-    <header>
+    <!-- <header>
         <nav>
             <ul>
                 <div class="tab-buttons">
@@ -146,13 +257,26 @@
                 </div>
             </ul>
         </nav>
-    </header>
-    
+    </header> -->
 
-    <div class="center-container">
+    
+    <div class="paper-container">
+        <div class="paper">
+            <img src="https://i.imgur.com/8ZWn0xL.png" alt="Run" onclick="redirectToPage('page1.html')">
+        </div>
+    </div>
+
+    <img src="https://i.imgur.com/Mwac2eC.png" alt="Your Image" class="top-image">
+
+    <img src="https://i.imgur.com/bPlePhJ.png" alt="Your Image" class="top-image2">
+
+    <img src="https://i.imgur.com/fh4Chuh.png" alt="Your Image" class="top-image3">
+
+
+    
+    <!-- <div class="center-container">
         <div class="panel">
             <div class="panel-content">
-                <div class="tab" id="Home">
                     <main>
                         <section class="featured-article">
                             <h2>Featured Article</h2>
@@ -162,30 +286,20 @@
                                 <a href="#">Read more</a>
                             </article>
                         </section>
-                        
-                        <section class="latest-news">
-                            <h2>Latest News</h2>
-                            <article>
-                                <h3>Article Title</h3>
-                                <p>Article content goes here...</p>
-                                <a href="#">Read more</a>
-                            </article>
-                            <article>
-                              <h3>Article Title</h3>
-                              <p>Article content goes here...</p>
-                              <a href="#">Read more</a>
-                            </article>
-                            <!-- More articles can go here -->
-                        </section>
                     </main>
-                  </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <!-- <footer>
-        <p>&copy; 2024 Certified Yappers. All rights reserved.</p>
-    </footer> -->
+    <footerTwo>
+        <!-- <p>&copy; 2024 Certified Yappers. All rights reserved.</p> -->
+    </footerTwo>
+
+    <footer>
+        <!-- <p>&copy; 2024 Certified Yappers. All rights reserved.</p> -->
+    </footer>
+
+
 
 <script>
 
