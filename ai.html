@@ -5,195 +5,349 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THE FUCKING NEWS</title>
     <style>
+        @media only screen and (min-width: 551px) {
 
-        @font-face { font-family: 'Nunito Black'; src: url('Nunito-Black.ttf'); }
+            @font-face { font-family: 'Nunito Black'; src: url('Nunito-Black.ttf'); }
 
-          /* Style for tabs */
-        .tab {
-            display: none;
-        }
+            .tab {
+                display: none;
+            }
 
-        /* Style for active tab */
-        .tab.active {
-            display: block;
-        }
+            .tab.active {
+                display: block;
+            }
 
-        /* Style for tab buttons */
-        .tab-button {
-            cursor: pointer;
-            text-decoration: none;
-            color: rgb(255, 255, 255);
-            font-size: 25px; 
-            margin-right: 20px;
-        }
+            .tab-button {
+                cursor: pointer;
+                text-decoration: none;
+                color: rgb(255, 255, 255);
+                font-size: 25px; 
+                margin-right: 20px;
+            }
 
-        /* Style for active tab button */
-        .tab-button.active {
-            color: #ecfd5f;
-            font-weight: bold;
-        }
+            .tab-button.active {
+                color: #ecfd5f;
+                font-weight: bold;
+            }
 
-        body, html {
-            font-family: 'Nunito Black', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url('https://i.imgur.com/cxzmi6U.gif');
-            background-size: cover;
-            background-repeat: repeat; 
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            
-        }
-        header {
-            background-color: #ff44ae;
-            color: #fff;
-            position: fixed;
-            padding: 10px;
-            width: 100%;
-        }
-        img {
-            width: 100%;
-            height: auto;
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 5px;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-        main {
-            flex: 1;
-            padding: 20px;
-        }
-        section {
-            margin-bottom: 30px;
-        }
-        article {
-            text-align: center;
-            border-bottom: 2px solid #edfd5f70;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
-        }
-        h2 {
-            text-align: center;
-            color: #ffffff;
-        }
-        h3 {
-            color: #ffffff;
-        }
-        h4 {
-            color: #ffffff;
-            text-align: center;
-            font-size: 40px; 
-            margin-top: 0px;
-            margin-bottom: 20px;
-        }
-        h5 {
-            color: #555;
-            text-align: center;
-            font-size: 40px;
-            margin-top: 10px;
-            margin-bottom: 0px;
-        }
-        footer {
-            background-color: #0000006b;
-            color: #ffffff;
-            padding: 5px;
-            text-align: center;
-            width: 100%;
-            /* position: fixed; */
-            bottom: 0;
-        }
+            body, html {
+                font-family: 'Nunito Black', sans-serif;
+                margin: 0;
+                padding: 0;
+                background-image: url('https://i.imgur.com/cxzmi6U.gif');
+                background-size: contain;
+                background-repeat: repeat; 
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+                
+            }
+            header {
+                background-color: #ff44ae;
+                color: #fff;
+                position: fixed;
+                padding: 0.2vw;
+                width: 100%;
+                height: auto;
+                max-width: 100%; /* Ensure image does not exceed container width */
+                max-height: 100vh;
+            }
+            img {
+                width: 100%;
+                height: auto;
+            }
+            footer {
+                background-color: #0000006b;
+                color: #ffffff;
+                padding: 5px;
+                text-align: center;
+                width: 100%;
+                /* position: fixed; */
+                bottom: 0;
+            }
 
-        .center-container {
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .panel {
-            width: 70%; 
-            /* max-width: 800px; */
-            height: 100%;
-            background-color: #ffffff; 
-            display: column;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            margin-top: 60px; 
-        }
-    
-        .panel-content {
-            font-family: 'Nunito Black', sans-serif;
-            text-align: center;
-            color: rgb(0, 0, 0);
-            font-size: 30px; 
-        }
+            .center-container {
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .panel {
+                width: 70%; 
+                /* max-width: 800px; */
+                height: 100%;
+                background-color: #ffffff; 
+                display: column;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                margin-top: 60px; 
+            }
+        
+            .panel-content {
+                font-family: 'Nunito Black', sans-serif;
+                text-align: center;
+                color: rgb(0, 0, 0);
+                font-size: 30px; 
+            }
 
-        .article-content {
-            margin-left: 50px;
-            margin-right: 50px;
-            font-family: 'Times New Roman', Times, serif;
-            text-align: center;
-            color: rgb(0, 0, 0);
-            font-size: 30px; 
+            .article-content {
+                margin-left: 50px;
+                margin-right: 50px;
+                font-family: 'Times New Roman', Times, serif;
+                text-align: center;
+                color: rgb(0, 0, 0);
+                font-size: 1.5vw;
+                max-width: 100%;
+                overflow-wrap: break-word;
+                /* font-size: 30px;  */
+            }
+            .title {
+                font-family: 'Nunito Black', sans-serif;
+                text-align: center;
+                color: rgb(0, 0, 0);
+                font-size: 2.5vw;
+                max-width: 100%;
+                overflow-wrap: break-word;
+                /* font-size: 50px;  */
+                font-weight: bold;
+            }
+            .related {
+                font-family: 'Nunito Black', sans-serif;
+                text-align: center;
+                color: rgb(0, 0, 0);
+                font-size: 2.5vw;
+                max-width: 100%;
+                overflow-wrap: break-word;
+                /* font-size: 50px;  */
+                font-weight: bold;
+                margin-bottom: -20%;
+            }
+            .author {
+                font-family: 'Nunito Black', sans-serif;
+                text-align: center;
+                color: rgb(0, 0, 0);
+                font-size: 1vw;
+                max-width: 100%;
+                overflow-wrap: break-word;
+                /* font-size: 25px;  */
+            }
+
+            .article-container {
+                position: relative; /* Set relative positioning for the container */
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+
+            .article-covers {
+                position: relative; /* Set relative positioning for the image container */
+                width: 200px;
+                height: auto;
+                margin: 20%;
+                left: -10vw;
+                /* top: -30vh; */
+            }
+
+            .article-covers img {
+                width: 400%; /* Ensure the image fills its container */
+                height: auto;
+                max-width: 400%; /* Ensure image does not exceed container width */
+                max-height: 100vh;
+                /* min-width: 10vw; */
+            }
+
+            .article-covers .overlay-text {
+                font-family: 'Nunito Black', sans-serif;
+                position: absolute; /* Position the text absolutely */
+                bottom: 5px; /* Adjust the positioning of the text as needed */
+                left: 0;
+                right: 0;
+                text-align: center; /* Center the text horizontally */
+                color: rgb(255, 255, 255); /* Optionally set text color */
+                background-color: rgba(0, 0, 0, 0.7); 
+                font-size: 1vw;
+                width: 400%;
+                max-width: 400%;
+                /* max-height: 30%; */
+                overflow-wrap: break-word;
+                /* font-size: 30px;  */
+                
+            }
         }
-        .title {
-            font-family: 'Nunito Black', sans-serif;
-            text-align: center;
-            color: rgb(0, 0, 0);
-            font-size: 50px; 
-            font-weight: bold;
+        @media only screen and (max-width: 550px) {
+            @font-face { font-family: 'Nunito Black'; src: url('Nunito-Black.ttf'); }
+
+            .tab {
+                display: none;
+            }
+
+            .tab.active {
+                display: block;
+            }
+
+            .tab-button {
+                cursor: pointer;
+                text-decoration: none;
+                color: rgb(255, 255, 255);
+                font-size: 25px; 
+                margin-right: 20px;
+            }
+
+            .tab-button.active {
+                color: #ecfd5f;
+                font-weight: bold;
+            }
+
+            body, html {
+                font-family: 'Nunito Black', sans-serif;
+                margin: 0;
+                padding: 0;
+                background-image: url('https://i.imgur.com/cxzmi6U.gif');
+                background-size: contain;
+                background-repeat: repeat; 
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+                
+            }
+            header {
+                background-color: #ff44ae;
+                color: #fff;
+                position: fixed;
+                padding: 0.2vw;
+                width: 100%;
+                height: auto;
+                max-width: 100%; /* Ensure image does not exceed container width */
+                max-height: 100vh;
+            }
+            img {
+                width: 100%;
+                height: auto;
+            }
+            footer {
+                background-color: #0000006b;
+                color: #ffffff;
+                padding: 5px;
+                text-align: center;
+                width: 100%;
+                /* position: fixed; */
+                bottom: 0;
+            }
+
+            .center-container {
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .panel {
+                width: 70%; 
+                /* max-width: 800px; */
+                height: 100%;
+                background-color: #ffffff; 
+                display: column;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                margin-top: 60px; 
+            }
+        
+            .panel-content {
+                font-family: 'Nunito Black', sans-serif;
+                text-align: center;
+                color: rgb(0, 0, 0);
+                font-size: 30px; 
+            }
+
+            .article-content {
+                margin-left: 50px;
+                margin-right: 50px;
+                font-family: 'Times New Roman', Times, serif;
+                text-align: center;
+                color: rgb(0, 0, 0);
+                font-size: 2.5vw;
+                max-width: 100%;
+                overflow-wrap: break-word;
+                /* font-size: 30px;  */
+            }
+            .title {
+                font-family: 'Nunito Black', sans-serif;
+                text-align: center;
+                color: rgb(0, 0, 0);
+                font-size: 4.5vw;
+                max-width: 100%;
+                overflow-wrap: break-word;
+                /* font-size: 50px;  */
+                font-weight: bold;
+            }
+            .related {
+                font-family: 'Nunito Black', sans-serif;
+                text-align: center;
+                color: rgb(0, 0, 0);
+                font-size: 2.5vw;
+                max-width: 100%;
+                overflow-wrap: break-word;
+                /* font-size: 50px;  */
+                font-weight: bold;
+                margin-bottom: -20%;
+            }
+            .author {
+                font-family: 'Nunito Black', sans-serif;
+                text-align: center;
+                color: rgb(0, 0, 0);
+                font-size: 2vw;
+                max-width: 100%;
+                overflow-wrap: break-word;
+                /* font-size: 25px;  */
+            }
+
+            .article-container {
+                position: relative; /* Set relative positioning for the container */
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+
+            .article-covers {
+                position: relative; /* Set relative positioning for the image container */
+                width: 200px;
+                height: auto;
+                margin: 20%;
+                left: -10vw;
+                /* top: -30vh; */
+            }
+
+            .article-covers img {
+                width: 400%; /* Ensure the image fills its container */
+                height: auto;
+                max-width: 400%; /* Ensure image does not exceed container width */
+                max-height: 100vh;
+                /* min-width: 10vw; */
+            }
+
+            .article-covers .overlay-text {
+                font-family: 'Nunito Black', sans-serif;
+                position: absolute; /* Position the text absolutely */
+                bottom: 5px; /* Adjust the positioning of the text as needed */
+                left: 0;
+                right: 0;
+                text-align: center; /* Center the text horizontally */
+                color: rgb(255, 255, 255); /* Optionally set text color */
+                background-color: rgba(0, 0, 0, 0.7); 
+                font-size: 1vw;
+                width: 400%;
+                max-width: 400%;
+                /* max-height: 30%; */
+                overflow-wrap: break-word;
+                /* font-size: 30px;  */
+                
+            }
         }
-        .author {
-            font-family: 'Nunito Black', sans-serif;
-            text-align: center;
-            color: rgb(0, 0, 0);
-            font-size: 25px; 
-        }
-
-    .article-container {
-    position: relative; /* Set relative positioning for the container */
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
-.article-covers {
-    position: relative; /* Set relative positioning for the image container */
-    width: 200px;
-    height: auto;
-    margin: 0 130px;
-}
-
-.article-covers img {
-    width: 100%; /* Ensure the image fills its container */
-    height: auto;
-}
-
-.article-covers .overlay-text {
-    font-family: 'Nunito Black', sans-serif;
-    position: absolute; /* Position the text absolutely */
-    bottom: 5px; /* Adjust the positioning of the text as needed */
-    left: 0;
-    right: 0;
-    text-align: center; /* Center the text horizontally */
-    color: rgb(255, 255, 255); /* Optionally set text color */
-    background-color: rgba(0, 0, 0, 0.7); 
-    
-    font-size: 30px; 
-    
-}
         
     </style>
 </head>
@@ -257,8 +411,8 @@
                     any harm to befall them. Until they feel the need to stage an intervention, they will look on in
                     anticipation of Kubin’s future projects and the further development of this one.
             </div>
-            <div class="title">
-            <br><br><br><br> Related Articles
+            <div class="related">
+            <br><br> Related Articles
             </div>
             </div>
             <div class="article-container">
